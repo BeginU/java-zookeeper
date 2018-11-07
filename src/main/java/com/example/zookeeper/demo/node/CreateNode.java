@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
  **/
 public class CreateNode {
 
-    private static final String ADDRESS = "127.0.0.1:2181";
+    private static final String ADDRESS = "192.168.144.133:2181";
     private static final int TIME_OUT  = 2000;
     private static final CountDownLatch countDownLatch = new CountDownLatch(1);
 
@@ -34,7 +34,7 @@ public class CreateNode {
         // 进行阻塞
         countDownLatch.await();
         //创建持久节点，允许任何服务器可以访问
-        String path = zooKeeper.create("/test22","testdata".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        String path = zooKeeper.create("/test23","testdata".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
         //String path1 = zooKeeper.create("/test11","testdata".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
        //zooKeeper.delete("/test22",0);
         System.out.println(path);
