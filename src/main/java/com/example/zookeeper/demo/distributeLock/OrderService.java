@@ -22,14 +22,14 @@ public class OrderService implements  Runnable{
 
     // 不使用锁，会出现重复订单
    /*public void getNum(){
-        String num = orderNoGeneration.getOrderNo();
+        String num = orderNoGeneration.getNumber();
         System.out.println(Thread.currentThread().getName() + ",生成订单ID:" + num);
    }*/
 
    // 使用synchronized同步锁
     /*public void getNum(){
         synchronized (this){
-            String num = orderNoGeneration.getOrderNo();
+            String num = orderNoGeneration.getNumber();
             System.out.println(Thread.currentThread().getName() + ",生成订单ID:" + num);
         }
     }*/
@@ -38,7 +38,7 @@ public class OrderService implements  Runnable{
    /* public void getNum(){
         try {
             lock.lock();
-            String num = orderNoGeneration.getOrderNo();
+            String num = orderNoGeneration.getNumber();
             System.out.println(Thread.currentThread().getName() + ",生成订单ID:" + num);
         }catch (Exception e){
             throw e;
